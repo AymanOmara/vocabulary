@@ -36,7 +36,6 @@ class OnBoardingScreen extends StatelessWidget {
                   onPressed: () async {
                     if (cubit.currentIndex <
                         cubit.onBoardingSliders.length - 1) {
-                      // Logger.D(cubit.currentIndex);
                       pageViewController.nextPage(
                         duration: const Duration(
                           milliseconds: 500,
@@ -45,7 +44,9 @@ class OnBoardingScreen extends StatelessWidget {
                       );
                     } else {
                       cubit.updateFirstLaunch();
-                      Navigator.of(context).pushNamed(AppRoutes.infoTakingScreen);
+                      Navigator.of(context).pushNamed(
+                        AppRoutes.chooseLanguageScreen,
+                      );
                       // Navigator.of(context).pushNamedAndRemoveUntil(
                       //   AppRoutes.infoTakingScreen,
                       //       (route) => false,
