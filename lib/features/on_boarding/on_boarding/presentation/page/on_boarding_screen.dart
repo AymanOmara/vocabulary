@@ -22,34 +22,36 @@ class OnBoardingScreen extends StatelessWidget {
               OnBoardingCarouselSlider(
                 pageViewController: pageViewController,
               ),
-              MaterialButton(
-                color: linkColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                    20,
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: MaterialButton(
+                  height: 50,
+                  minWidth: double.infinity,
+                  color: linkColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                      20,
+                    ),
                   ),
-                ),
-                onPressed: () async {
-                  if (cubit.currentIndex <
-                      cubit.onBoardingSliders.length - 1) {
-                    // Logger.D(cubit.currentIndex);
-                    pageViewController.nextPage(
-                      duration: const Duration(
-                        milliseconds: 500,
-                      ),
-                      curve: Curves.linear,
-                    );
-                  } else {
-                    cubit.updateFirstLaunch();
-                    Navigator.of(context).pushNamed(AppRoutes.infoTakingScreen);
-                    // Navigator.of(context).pushNamedAndRemoveUntil(
-                    //   AppRoutes.infoTakingScreen,
-                    //       (route) => false,
-                    // );
-                  }
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  onPressed: () async {
+                    if (cubit.currentIndex <
+                        cubit.onBoardingSliders.length - 1) {
+                      // Logger.D(cubit.currentIndex);
+                      pageViewController.nextPage(
+                        duration: const Duration(
+                          milliseconds: 500,
+                        ),
+                        curve: Curves.linear,
+                      );
+                    } else {
+                      cubit.updateFirstLaunch();
+                      Navigator.of(context).pushNamed(AppRoutes.infoTakingScreen);
+                      // Navigator.of(context).pushNamedAndRemoveUntil(
+                      //   AppRoutes.infoTakingScreen,
+                      //       (route) => false,
+                      // );
+                    }
+                  },
                   child: Text(
                     cubit.currentIndex >= cubit.onBoardingSliders.length - 1
                         ? "Get Started"

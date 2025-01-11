@@ -14,34 +14,44 @@ class GettingStartedScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SvgPicture.asset(
-                  "assets/app_ic.svg",
-                ),
-                Text(
-                  "speaker",
-                  style: TextStyle(fontSize: 25),
-                )
-              ],
-            ),
-            SvgPicture.asset(
-              "assets/getting_started.svg",
-            ),
-            Text(
-              "Learn a language in 3 minute a day",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.w500,
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        "assets/app_ic.svg",
+                      ),
+                      Text(
+                        "speaker",
+                        style: TextStyle(fontSize: 25),
+                      )
+                    ],
+                  ),
+                  SvgPicture.asset(
+                    "assets/getting_started.svg",
+                  ),
+                  Text(
+                    "Learn a language in 3 minute a day",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: MaterialButton(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0), // Rounded corners
+                  borderRadius: BorderRadius.circular(
+                    10.0,
+                  ),
                 ),
                 height: 50,
                 minWidth: double.infinity,
@@ -60,7 +70,8 @@ class GettingStartedScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
+            SizedBox(height: 20,),
           ],
         ),
       ),
