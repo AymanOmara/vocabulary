@@ -3,7 +3,7 @@ import 'package:domain/features/vocabulary/use_case/set_language_use_case.dart';
 import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 import 'package:vocabulary/core/helper/utils.dart';
-import 'package:vocabulary/features/info_taking/choose_language/display/country_item_display.dart';
+import 'package:vocabulary/features/info_taking/choose_language/display/language_item_display.dart';
 
 part 'choose_language_states.dart';
 
@@ -13,22 +13,22 @@ class ChooseLanguageCubit extends Cubit<ChooseLanguageStates> {
 
   bool get isAnySelected =>
       countries.firstWhereOrNull((it) => it.isSelected) != null;
-  final List<CountryItemDisplay> countries = [
-    CountryItemDisplay(
+  final List<LanguageItemDisplay> countries = [
+    LanguageItemDisplay(
       flagImagePath: "uk_flag.png",
       key: "English",
     ),
-    CountryItemDisplay(
+    LanguageItemDisplay(
       flagImagePath: "france_flag.png",
       key: "France",
     ),
-    CountryItemDisplay(
+    LanguageItemDisplay(
       flagImagePath: "spain_flag.png",
       key: "Spain",
     ),
   ];
 
-  void updateSelectedLanguage(CountryItemDisplay country) {
+  void updateSelectedLanguage(LanguageItemDisplay country) {
     countries.unSelectAllExpect(country.key);
     emit(ChooseLanguageInitial());
   }

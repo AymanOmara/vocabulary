@@ -13,24 +13,6 @@ class VocabularyRepository implements IVocabularyRepository {
     return wordData[_userLocal.language]?[_userLocal.level] ?? [];
   }
 
-  @override
-  Future<String> explainWord(String word) async {
-    return "error";
-    // try {
-    //   final response = await Gemini.instance.prompt(
-    //     parts: [
-    //       Part.text(
-    //         'Explain this word and provide an example using the same language: $word',
-    //       ),
-    //     ],
-    //   );
-    //
-    //   return response?.output ?? "No available output";
-    // } catch (e) {
-    //   return "An error occurred while explaining the word.";
-    // }
-  }
-
   final Map<String, Map<String, List<VocabularyEntity>>> wordData = {
     "English": {
       "A1 - Beginning": [

@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:domain/features/vocabulary/repository/i_vocabulary_repository.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:meta/meta.dart';
 
@@ -21,7 +20,6 @@ class VocabularyDetailsCubit extends Cubit<VocabularyDetailsState> {
     isLoading = true;
     emit(VocabularyDetailsUpdateLoadingState());
     try {
-      isLoading = false;
       final response = await Gemini.instance.prompt(
         parts: [
           Part.text(
@@ -29,6 +27,7 @@ class VocabularyDetailsCubit extends Cubit<VocabularyDetailsState> {
           ),
         ],
       );
+      isLoading = false;
       details = response?.output ?? "No available output";
       emit(VocabularyDetailsUpdateLoadingState());
     } catch (e) {

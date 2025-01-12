@@ -5,3 +5,4 @@ var aliceBlue = const Color(0xffE5F2FF);
 var lightGray = const Color(0xFFfafbfb);
 var veryLightGray = const Color(0xffF2F2F2);
 var sliverGray = const Color(0xffD7D7D7);
+var mutedGray = const Color(0xff707070);

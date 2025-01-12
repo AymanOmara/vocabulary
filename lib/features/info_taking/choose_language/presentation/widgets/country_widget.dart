@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vocabulary/core/ui/theme/colors.dart';
-import 'package:vocabulary/features/info_taking/choose_language/display/country_item_display.dart';
+import 'package:vocabulary/features/info_taking/choose_language/display/language_item_display.dart';
 
 class CountryWidget extends StatelessWidget {
   const CountryWidget({
@@ -9,8 +9,8 @@ class CountryWidget extends StatelessWidget {
     required this.onTap,
   });
 
-  final CountryItemDisplay country;
-  final void Function(CountryItemDisplay) onTap;
+  final LanguageItemDisplay country;
+  final void Function(LanguageItemDisplay) onTap;
 
   @override
   Widget build(BuildContext context) {

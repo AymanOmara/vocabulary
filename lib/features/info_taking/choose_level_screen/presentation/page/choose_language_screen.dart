@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vocabulary/core/ui/back_widget.dart';
 import 'package:vocabulary/core/ui/theme/colors.dart';
 import 'package:vocabulary/features/info_taking/choose_level_screen/presentation/widgets/choose_level_dialog.dart';
 
@@ -13,12 +14,17 @@ class ChooseLevelScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
+            Row(
+              children: [
+                BackWidget(),
+              ],
+            ),
             SizedBox(
               height: 10,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: 10,
+                horizontal: 16,
               ),
               child: Text(
                 "Pick the level that best matches your experience to personalize your path",
@@ -40,7 +46,7 @@ class ChooseLevelScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: 20,
+                horizontal: 16,
               ),
               child: MaterialButton(
                 shape: RoundedRectangleBorder(

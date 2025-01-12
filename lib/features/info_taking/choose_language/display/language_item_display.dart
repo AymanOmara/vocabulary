@@ -1,13 +1,13 @@
 import 'package:vocabulary/core/display/i_selectable.dart';
 
-class CountryItemDisplay implements ISelectable {
+class LanguageItemDisplay implements ISelectable {
   final String flagImagePath;
   @override
   final String key;
   @override
   bool isSelected = false;
 
-  CountryItemDisplay({
+  LanguageItemDisplay({
     required this.flagImagePath,
     required this.key,
   });
