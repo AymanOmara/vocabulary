@@ -53,6 +53,7 @@ class ChooseLevelDialog extends StatelessWidget {
                 MaterialButton(
                   onPressed: cubit.isAnySelected
                       ? () {
+                          cubit.submitLevel();
                           cubit.updateFirstRun();
                           Navigator.of(context).pushNamedAndRemoveUntil(
                             AppRoutes.home,

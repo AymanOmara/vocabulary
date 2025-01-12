@@ -11,4 +11,5 @@ class AppRoutes {
 
   /// ********* home  **********
   static const home = "homeScreen";
+  static const vocabularyDetails = "vocabularyDetails";
 }

@@ -48,6 +48,7 @@ class ChooseLanguageScreen extends StatelessWidget {
                   MaterialButton(
                     onPressed: cubit.isAnySelected
                         ? () {
+                            cubit.submitLanguage();
                             Navigator.pushNamed(
                               context,
                               AppRoutes.chooseLevelScreen,

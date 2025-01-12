@@ -11,6 +11,8 @@ import 'package:vocabulary/features/info_taking/choose_level_screen/presentation
 import 'package:vocabulary/features/on_boarding/getting_started/presentation/getting_started_screen.dart';
 import 'package:vocabulary/features/on_boarding/on_boarding/business_logic/on_boarding_cubit.dart';
 import 'package:vocabulary/features/on_boarding/on_boarding/presentation/page/on_boarding_screen.dart';
+import 'package:vocabulary/features/vocabulary_details/business_logic/vocabulary_details_cubit.dart';
+import 'package:vocabulary/features/vocabulary_details/presentation/page/vocabulary_details_screen.dart';
 
 class AppRouter {
   Route? generateRouter(RouteSettings settings) {
@@ -45,6 +47,15 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (_) => getIt<HomeCubit>(),
             child: HomeScreen(),
+          ),
+        );
+      case AppRoutes.vocabularyDetails:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (_) => getIt<VocabularyDetailsCubit>(
+              param1: settings.arguments as String,
+            ),
+            child: VocabularyDetailsScreen(),
           ),
         );
     }

@@ -22,4 +22,20 @@ class UserLocal implements IUserLocal {
   void setFirstRun() {
     _storage.write(LocaleKeys.firstLunch, false);
   }
+
+  @override
+  String get language => _storage.read(LocaleKeys.language) ?? "English";
+
+  @override
+  void setLanguage(String language) {
+    _storage.write(LocaleKeys.language, language);
+  }
+
+  @override
+  String get level => _storage.read(LocaleKeys.level) ?? "A1 - Beginning";
+
+  @override
+  void setLevel(String level) {
+    _storage.write(LocaleKeys.level, level);
+  }
 }
