@@ -9,6 +9,7 @@ class GettingStartedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SizedBox(
         width: double.infinity,
         child: Column(
@@ -50,7 +51,7 @@ class GettingStartedScreen extends StatelessWidget {
               child: MaterialButton(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(
-                    10.0,
+                    20.0,
                   ),
                 ),
                 height: 50,

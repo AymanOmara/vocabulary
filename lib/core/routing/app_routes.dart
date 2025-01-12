@@ -8,4 +8,7 @@ class AppRoutes {
   /// ********* info taking  **********
   static const chooseLanguageScreen = "chooseLanguageScreen";
   static const chooseLevelScreen = "chooseLevelScreen";
+
+  /// ********* home  **********
+  static const home = "homeScreen";
 }

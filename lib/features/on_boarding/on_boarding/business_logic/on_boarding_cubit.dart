@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:domain/features/common/use_case/change_first_run_use_case.dart';
 
 import 'package:meta/meta.dart';
 import 'package:vocabulary/features/on_boarding/on_boarding/display/on_boarding_slider_item.dart';
@@ -7,10 +6,7 @@ import 'package:vocabulary/features/on_boarding/on_boarding/display/on_boarding_
 part 'on_boarding_state.dart';
 
 class OnBoardingCubit extends Cubit<OnBoardingState> {
-  OnBoardingCubit(
-    this._changeFirstLaunchUseCase,
-  ) : super(OnBoardingInitial());
-  final ChangeFirstLaunchUseCase _changeFirstLaunchUseCase;
+  OnBoardingCubit() : super(OnBoardingInitial());
   List<OnBoardingSliderItem> onBoardingSliders = [
     OnBoardingSliderItem(
       title: "Welcome to Speaker!",
@@ -35,9 +31,5 @@ class OnBoardingCubit extends Cubit<OnBoardingState> {
   void changeIndex(int index) {
     currentIndex = index;
     emit(OnBoardingUpdateCurrentSliderIndex());
-  }
-
-  void updateFirstLaunch() {
-    _changeFirstLaunchUseCase();
   }
 }

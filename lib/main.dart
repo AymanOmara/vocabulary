@@ -10,10 +10,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DI.registerDependencies();
   registerDependencies(diInjector);
-  final GetFirstRunUseCase firstRun = diInjector();
   runApp(
     MyApp(
-      firstRun: firstRun(),
+      firstRun: diInjector<GetFirstRunUseCase>()(),
     ),
   );
 }
@@ -32,7 +31,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter().generateRouter,
-      initialRoute: AppRoutes.gettingStartedScreen,
+      initialRoute: firstRun ? AppRoutes.gettingStartedScreen : AppRoutes.home,
     );
   }
 }

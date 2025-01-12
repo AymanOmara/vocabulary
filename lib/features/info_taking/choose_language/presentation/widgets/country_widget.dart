@@ -34,7 +34,7 @@ class CountryWidget extends StatelessWidget {
                 width: 20,
               ),
               Text(
-                country.languageTitle,
+                country.key,
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 16,
@@ -52,7 +52,9 @@ class CountryWidget extends StatelessWidget {
   BoxDecoration _getBoxDecoration() {
     return BoxDecoration(
       borderRadius: BorderRadius.all(
-        Radius.circular(20),
+        Radius.circular(
+          20,
+        ),
       ),
       color: country.isSelected ? aliceBlue : lightGray,
       gradient: null,

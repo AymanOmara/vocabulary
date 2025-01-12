@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:get/get.dart';
 import 'package:meta/meta.dart';
+import 'package:vocabulary/core/helper/utils.dart';
 import 'package:vocabulary/features/info_taking/choose_language/display/country_item_display.dart';
 
 part 'choose_language_states.dart';
@@ -13,20 +14,20 @@ class ChooseLanguageCubit extends Cubit<ChooseLanguageStates> {
   final List<CountryItemDisplay> countries = [
     CountryItemDisplay(
       flagImagePath: "uk_flag.png",
-      languageTitle: "English",
+      key: "English",
     ),
     CountryItemDisplay(
       flagImagePath: "france_flag.png",
-      languageTitle: "France",
+      key: "France",
     ),
     CountryItemDisplay(
       flagImagePath: "spain_flag.png",
-      languageTitle: "Spain",
+      key: "Spain",
     ),
   ];
 
   void updateSelectedLanguage(CountryItemDisplay country) {
-    countries.unSelectAllExpect(country.languageTitle);
+    countries.unSelectAllExpect(country.key);
     emit(ChooseLanguageInitial());
   }
 }

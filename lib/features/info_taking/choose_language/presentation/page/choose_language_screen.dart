@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vocabulary/core/routing/app_routes.dart';
 import 'package:vocabulary/core/ui/theme/colors.dart';
 import 'package:vocabulary/features/info_taking/choose_language/business_logic/choose_language_cubit.dart';
 import 'package:vocabulary/features/info_taking/choose_language/presentation/widgets/country_widget.dart';
@@ -45,9 +46,14 @@ class ChooseLanguageScreen extends StatelessWidget {
                     ),
                   ),
                   MaterialButton(
-                    onPressed: cubit.isAnySelected ? (){
-
-                    } : null,
+                    onPressed: cubit.isAnySelected
+                        ? () {
+                            Navigator.pushNamed(
+                              context,
+                              AppRoutes.chooseLevelScreen,
+                            );
+                          }
+                        : null,
                     disabledColor: Colors.blue.shade200,
                     minWidth: double.infinity,
                     color: linkColor,
@@ -61,7 +67,7 @@ class ChooseLanguageScreen extends StatelessWidget {
                     child: const Text(
                       "Next",
                       style: TextStyle(
-                        fontSize: 16
+                        fontSize: 16,
                       ),
                     ),
                   ),

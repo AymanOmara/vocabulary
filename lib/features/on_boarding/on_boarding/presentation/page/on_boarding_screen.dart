@@ -43,14 +43,9 @@ class OnBoardingScreen extends StatelessWidget {
                         curve: Curves.linear,
                       );
                     } else {
-                      cubit.updateFirstLaunch();
                       Navigator.of(context).pushNamed(
                         AppRoutes.chooseLanguageScreen,
                       );
-                      // Navigator.of(context).pushNamedAndRemoveUntil(
-                      //   AppRoutes.infoTakingScreen,
-                      //       (route) => false,
-                      // );
                     }
                   },
                   child: Text(

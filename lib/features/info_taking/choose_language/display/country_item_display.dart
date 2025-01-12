@@ -1,18 +1,14 @@
-class CountryItemDisplay {
+import 'package:vocabulary/core/display/i_selectable.dart';
+
+class CountryItemDisplay implements ISelectable {
   final String flagImagePath;
-  final String languageTitle;
+  @override
+  final String key;
+  @override
   bool isSelected = false;
 
   CountryItemDisplay({
     required this.flagImagePath,
-    required this.languageTitle,
+    required this.key,
   });
-}
-
-extension MarkUnselected on List<CountryItemDisplay> {
-  void unSelectAllExpect(String countryTitle) {
-    for (var i in this) {
-      i.isSelected = i.languageTitle == countryTitle;
-    }
-  }
 }
