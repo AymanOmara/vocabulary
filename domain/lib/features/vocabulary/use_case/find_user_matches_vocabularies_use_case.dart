@@ -7,6 +7,6 @@ class FindUserMatchesVocabulariesUseCase {
   const FindUserMatchesVocabulariesUseCase(this._repository);
 
   List<VocabularyEntity> call() {
-    return _repository.findUserMatchesVocabularies();
+     return _repository.findUserMatchesVocabularies();
   }
 }
